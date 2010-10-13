@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{1A849A06-1CCF-4FCE-B7C5-108A11C47328}</ProjectGuid>
+    <RootNamespace>LoginServiceGTEST</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfAtl>false</UseOfAtl>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>F:\master deps\;F:\master deps\gmock\include;F:\master deps\glog\src\windows\;F:\master deps\gtest\include;F:\master deps\boost_1_44_0\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>LoginServiceLib.lib;gtestd.lib;gmock.lib;libanh.lib;libglog.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>S:\Programming\SWGANH\loginserviceAPITest\Debug;F:\master deps\glog\Debug;F:\master deps\boost_1_44_0\stage\lib;F:\master deps\boost_1_44_0\;$(SolutionDir)\deps\mysql\lib\debug;F:\master deps\gtest\include\;F:\master deps\gmock\include;F:\master deps\glog\src\windows;$(SolutionDir)\deps\mysql-connector-cpp\driver\Debug;S:\Programming\SWGANH\libanh\msvc\Debug;S:\Programming\SWGANH\libanh\deps\gmock\msvc\Debug;S:\Programming\SWGANH\libanh\deps\gtest\msvc\gtest-md\Debug;S:\Programming\SWGANH\libanh\deps\tbb\lib\ia32\vc10\;S:\Programming\SWGANH\libanh\deps\boost\stage\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Command>cd "$(SolutionDir)$(ConfigurationName)"
+"$(OutDir)$(TargetName)$(TargetExt)" --gtest_break_on_failure --gtest_output=xml:$(SolutionDir)build-aux\</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\loginserviceTest\LoginService_unittest.cc" />
+    <ClCompile Include="..\loginserviceTest\main.cpp" />
+    <ClCompile Include="..\loginserviceTest\tests\MockObjects\MockEvent.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\loginserviceTest\tests\MockObjects\MockEvent.h" />
+    <ClInclude Include="..\loginserviceTest\tests\MockObjects\MockListener.h" />
+    <ClInclude Include="..\loginserviceTest\tests\MockObjects\MockListenerAlt.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\loginserviceTest\loginserviceTest.vcxproj">
+      <Project>{46c49541-c775-4b17-a907-12b2dc097556}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

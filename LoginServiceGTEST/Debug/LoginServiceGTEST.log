@@ -1,0 +1,45 @@
+﻿Build started 10/12/2010 11:09:47 PM.
+     1>Project "S:\Programming\SWGANH\loginserviceAPITest\LoginServiceGTEST\LoginServiceGTEST.vcxproj" on node 3 (rebuild target(s)).
+     1>_PrepareForClean:
+         Deleting file "Debug\LoginServiceGTEST.lastbuildstate".
+       InitializeBuildStatus:
+         Touching "Debug\LoginServiceGTEST.unsuccessfulbuild".
+       ClCompile:
+         S:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"F:\master deps\\" /I"F:\master deps\gmock\include" /I"F:\master deps\glog\src\windows\\" /I"F:\master deps\gtest\include" /I"F:\master deps\boost_1_44_0\\" /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ..\loginserviceTest\LoginService_unittest.cc ..\loginserviceTest\main.cpp ..\loginserviceTest\tests\MockObjects\MockEvent.cpp
+         MockEvent.cpp
+         main.cpp
+         LoginService_unittest.cc
+         Generating Code...
+       Link:
+         S:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"S:\Programming\SWGANH\loginserviceAPITest\Debug\LoginServiceGTEST.exe" /NOLOGO /LIBPATH:S:\Programming\SWGANH\loginserviceAPITest\Debug /LIBPATH:"F:\master deps\glog\Debug" /LIBPATH:"F:\master deps\boost_1_44_0\stage\lib" /LIBPATH:"F:\master deps\boost_1_44_0\\" /LIBPATH:S:\Programming\SWGANH\loginserviceAPITest\\deps\mysql\lib\debug /LIBPATH:"F:\master deps\gtest\include\\" /LIBPATH:"F:\master deps\gmock\include" /LIBPATH:"F:\master deps\glog\src\windows" /LIBPATH:"S:\Programming\SWGANH\loginserviceAPITest\\deps\mysql-connector-cpp\driver\Debug" /LIBPATH:S:\Programming\SWGANH\libanh\msvc\Debug /LIBPATH:S:\Programming\SWGANH\libanh\deps\gmock\msvc\Debug /LIBPATH:"S:\Programming\SWGANH\libanh\deps\gtest\msvc\gtest-md\Debug" /LIBPATH:S:\Programming\SWGANH\libanh\deps\tbb\lib\ia32\vc10\ /LIBPATH:S:\Programming\SWGANH\libanh\deps\boost\stage\lib LoginServiceLib.lib gtestd.lib gmock.lib libanh.lib libglog.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\LoginServiceGTEST.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"S:\Programming\SWGANH\loginserviceAPITest\Debug\LoginServiceGTEST.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"S:\Programming\SWGANH\loginserviceAPITest\Debug\LoginServiceGTEST.lib" /MACHINE:X86 Debug\LoginService_unittest.obj
+         Debug\main.obj
+         Debug\MockEvent.obj
+         S:\Programming\SWGANH\loginserviceAPITest\Debug\LoginServiceLib.lib
+         LoginServiceGTEST.vcxproj -> S:\Programming\SWGANH\loginserviceAPITest\Debug\LoginServiceGTEST.exe
+       Manifest:
+         S:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"S:\Programming\SWGANH\loginserviceAPITest\Debug\LoginServiceGTEST.exe;#1" /manifest Debug\LoginServiceGTEST.exe.intermediate.manifest
+       PostBuildEvent:
+         cd "S:\Programming\SWGANH\loginserviceAPITest\Debug"
+         "S:\Programming\SWGANH\loginserviceAPITest\Debug\LoginServiceGTEST.exe" --gtest_break_on_failure --gtest_output=xml:S:\Programming\SWGANH\loginserviceAPITest\build-aux\
+         :VCEnd
+         Running LoginService Unit Tests
+         [==========] Running 2 tests from 1 test case.
+         [----------] Global test environment set-up.
+         [----------] 2 tests from LoginService_unittest
+         [ RUN      ] LoginService_unittest.handlePlayerLoginRequestSuccess
+         [       OK ] LoginService_unittest.handlePlayerLoginRequestSuccess (1 ms)
+         [ RUN      ] LoginService_unittest.handlePlayerLoginRequestFailureByVersion
+         [       OK ] LoginService_unittest.handlePlayerLoginRequestFailureByVersion (0 ms)
+         [----------] 2 tests from LoginService_unittest (1 ms total)
+         
+         [----------] Global test environment tear-down
+         [==========] 2 tests from 1 test case ran. (1 ms total)
+         [  PASSED  ] 2 tests.
+       FinalizeBuildStatus:
+         Deleting file "Debug\LoginServiceGTEST.unsuccessfulbuild".
+         Touching "Debug\LoginServiceGTEST.lastbuildstate".
+     1>Done Building Project "S:\Programming\SWGANH\loginserviceAPITest\LoginServiceGTEST\LoginServiceGTEST.vcxproj" (rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:03.51
